@@ -50,8 +50,8 @@ public class InfiniteNumberDrawer : PropertyDrawer
         EditorGUI.BeginProperty(rect, label, property);
         {
             EditorGUI.BeginChangeCheck();
-            string newVal = EditorGUI.DelayedTextField(rect, new GUIContent(""), InfiniteNumber.FormatString(valueStringProp.stringValue),
-                EditorStyles.numberField);
+                string newVal = EditorGUI.DelayedTextField(rect, new GUIContent(""), InfiniteNumber.FormatString(valueStringProp.stringValue),
+                    EditorStyles.numberField);
             if (EditorGUI.EndChangeCheck())
                 valueStringProp.stringValue = newVal;
         }
