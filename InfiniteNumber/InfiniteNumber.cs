@@ -45,7 +45,7 @@ using UnityEngine;
         SetValueFromString(valStr);
     }
 
-    // implicit cast to Infinite Number
+    // implicit/explicit cast to Infinite Number
     public static implicit operator InfiniteNumber(BigInteger bi) => new InfiniteNumber(bi);
 
     public static implicit operator InfiniteNumber(string valStr) => new InfiniteNumber(valStr);
@@ -59,9 +59,9 @@ using UnityEngine;
     public static implicit operator InfiniteNumber(long l) => new InfiniteNumber(l);
     public static implicit operator InfiniteNumber(ulong l) => new InfiniteNumber(l);
 
-    public static implicit operator InfiniteNumber(float f) => new InfiniteNumber((BigInteger)f);
-    public static implicit operator InfiniteNumber(double d) => new InfiniteNumber((BigInteger)d);
-    public static implicit operator InfiniteNumber(decimal d) => new InfiniteNumber((BigInteger)d);
+    public static explicit operator InfiniteNumber(float f) => new InfiniteNumber((BigInteger)f);
+    public static explicit operator InfiniteNumber(double d) => new InfiniteNumber((BigInteger)d);
+    public static explicit operator InfiniteNumber(decimal d) => new InfiniteNumber((BigInteger)d);
 
     // implicit/explicit cast from Infinite Number
     public static implicit operator BigInteger(InfiniteNumber iNb) => iNb.Value;
